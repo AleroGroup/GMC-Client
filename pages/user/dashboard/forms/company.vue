@@ -14,7 +14,7 @@
  </v-layout>
 
     <v-layout row wrap>
-       <v-hover v-slot:default="{ hover }" v-for="(company,index) in companies" :key="index">
+       <v-hover v-slot:default="{ hover }" v-for="company in companies" :key="company.names">
              <v-card
                width="300px"
                :elevation="hover ? 12 : 2"
@@ -44,6 +44,7 @@
 
 <script>
 import axios from 'axios'
+import { async } from 'q';
 export default {
   name: 'dash_company',
    data() {
@@ -90,7 +91,6 @@ export default {
        this.errors.push(err);
      })
    }
-
 }
 </script>
 
