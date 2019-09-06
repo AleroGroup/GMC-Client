@@ -1,9 +1,14 @@
+/* eslint-disable nuxt/no-cjs-in-config */
 // const pkg = require('./package')
+// eslint-disable-next-line nuxt/no-cjs-in-config
 const siteConfig = require('./config/site')
 const analyticsID = 'UA-145893871-1'
 const siteUrl = 'https://www.greatmindsnairobi.co.ke'
-const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 require('dotenv').config()
+// eslint-disable-next-line nuxt/no-cjs-in-config
+// eslint-disable-next-line import/order
+// eslint-disable-next-line nuxt/no-cjs-in-config
+const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 
 module.exports = {
   mode: 'universal',
@@ -57,7 +62,7 @@ module.exports = {
       hid: 'og:image',
       property: 'og:image',
       content: process.env.NODE_ENV === 'production'
-          ? `${siteConfig.url}/${siteConfig.ogImage}` : `http://localhost:3000/${siteConfig.ogImage}`
+        ? `${siteConfig.url}/${siteConfig.ogImage}` : `http://localhost:3000/${siteConfig.ogImage}`
     },
 
     {
@@ -123,7 +128,7 @@ module.exports = {
    */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
-    baseURL: '/'
+    baseURL: 'http://ec2-3-17-164-106.us-east-2.compute.amazonaws.com/'
   },
 
   /*
