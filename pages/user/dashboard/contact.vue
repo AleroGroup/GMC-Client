@@ -1,5 +1,5 @@
 <template>
-<v-content>
+<!-- <v-content>
   <v-layout justify-center>
       <v-flex xs12 >
         <h1 class="display-1 text-xs-center text-xl-center"> DO YOU HAVE A PROBLEM ?</h1>
@@ -64,7 +64,7 @@
         </v-form>
       </v-card>
   </v-layout>
-</v-content>
+</v-content> -->
 </template>
 
 
