@@ -11,8 +11,8 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 
 /* Plugins */
 
-import nuxt_plugin_googleanalytics_7ce007ce from 'nuxt_plugin_googleanalytics_7ce007ce' // Source: ./google-analytics.js (mode: 'client')
-import nuxt_plugin_axios_0bd655ed from 'nuxt_plugin_axios_0bd655ed' // Source: ./axios.js (mode: 'all')
+import nuxt_plugin_googleanalytics_4ff37fb4 from 'nuxt_plugin_googleanalytics_4ff37fb4' // Source: ./google-analytics.js (mode: 'client')
+import nuxt_plugin_axios_a3fbd000 from 'nuxt_plugin_axios_a3fbd000' // Source: ./axios.js (mode: 'all')
 import nuxt_plugin_vuetify_e5914fcc from 'nuxt_plugin_vuetify_e5914fcc' // Source: ../plugins/vuetify (mode: 'all')
 
 // Component: <ClientOnly>
@@ -143,12 +143,12 @@ async function createApp(ssrContext) {
 
   // Plugin execution
 
-  if (process.client && typeof nuxt_plugin_googleanalytics_7ce007ce === 'function') {
-    await nuxt_plugin_googleanalytics_7ce007ce(app.context, inject)
+  if (process.client && typeof nuxt_plugin_googleanalytics_4ff37fb4 === 'function') {
+    await nuxt_plugin_googleanalytics_4ff37fb4(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_axios_0bd655ed === 'function') {
-    await nuxt_plugin_axios_0bd655ed(app.context, inject)
+  if (typeof nuxt_plugin_axios_a3fbd000 === 'function') {
+    await nuxt_plugin_axios_a3fbd000(app.context, inject)
   }
 
   if (typeof nuxt_plugin_vuetify_e5914fcc === 'function') {

@@ -152,5 +152,5 @@ module.exports = {
      */
     extend(config, ctx) {}
   },
-  buildDir: 'nuxt-dist'
+  buildDir: 'nuxt'
 }
