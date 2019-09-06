@@ -1,3 +1,5 @@
+/* eslint-disable nuxt/no-cjs-in-config */
+/* eslint-disable import/order */
 // const pkg = require('./package')
 const siteConfig = require('./config/site')
 const analyticsID = 'UA-145893871-1'
