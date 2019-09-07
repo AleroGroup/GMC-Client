@@ -103,6 +103,10 @@ module.exports = {
     '@/plugins/vuetify'
   ],
 
+  generate: {
+    // routes:
+  },
+
   /*
    ** Nuxt.js modules
    */
@@ -140,6 +144,8 @@ module.exports = {
    ** Build configuration
    */
   build: {
+    vendor: ['axios', 'vuetify'],
+
     transpile: ['vuetify/lib'],
     plugins: [new VuetifyLoaderPlugin()],
     loaders: {

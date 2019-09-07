@@ -14,12 +14,12 @@
  </v-layout>
 
     <v-layout row wrap>
-       <v-hover v-slot:default="{ hover }" v-for="company in companies" :key="company.names">
+       <v-hover v-slot:default="{ hover }" v-for="company in companies" :key="company.companyId">
              <v-card
                width="300px"
                :elevation="hover ? 12 : 2"
                style="margin-top:2%; margin-right:2%;"
-               @click="toMember(company.companyId)"
+
              >
                <v-img :src="company.cloudImage" height="200px">
                </v-img>
@@ -44,13 +44,14 @@
 
 <script>
 import axios from 'axios'
-import { async } from 'q';
+
 export default {
   name: 'dash_company',
    data() {
      return {
-       companies: [],
-       errors: ''
+      companies: {},
+       errors: '',
+       search:''
    }
    },
    computed: {
@@ -80,9 +81,13 @@ export default {
       link.setAttribute("href", data);
       link.setAttribute("download", "company.csv");
       link.click();
+    },
+    submit(event) {
+      this.$router.push(`dashboard/forms/comform/${this.search}`);
     }
   },
-   created() {
+
+  mounted() {
      axios.get('http://ec2-3-17-164-106.us-east-2.compute.amazonaws.com/company/')
      .then(res => {
        this.companies = res.data
@@ -90,10 +95,21 @@ export default {
      .catch(err => {
        this.errors.push(err);
      })
-   }
+   } 
+
 }
 </script>
 
 <style>
-
+.input{
+ border: 1px solid rgb(219, 219, 219);
+ margin-top: 2%;
+ height:38px;
+ width: 250px;
+ border-radius: 10px;
+ padding: 10px;
+}
+.input:hover .input:focus{
+  outline: none;
+}
 </style>

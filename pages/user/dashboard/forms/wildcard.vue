@@ -9,16 +9,20 @@
     </v-responsive>
     <v-divider></v-divider>
     <v-layout row justify-end>
+      <form @submit.prevent="submit">
+     <v-flex md10>
+      <input placeholder="Search.." name="" class="input"/>
+     </v-flex>
+      </form>
       <v-btn color="green" @click="csvExport(csvData)">Export all to CSV</v-btn>
     </v-layout>
 
     <v-layout row wrap>
-      <v-hover v-slot:default="{ hover }" v-for="(wildcard,index) in wildcards" :key="index">
+      <v-hover v-slot:default="{ hover }" v-for="wildcard in wildcards" :key="wildcard.wildcardId">
         <v-card
           width="300px"
           :elevation="hover ? 12 : 2"
           style="margin-top:2%; margin-right:2%;"
-          @click="toMember(item.itemId)"
         >
           <v-img :src="wildcard.cloudImage" height="200px"></v-img>
           <v-card-title primary-title>
@@ -73,8 +77,7 @@ export default {
     }
   },
   created() {
-    axios
-      .get('http://ec2-3-17-164-106.us-east-2.compute.amazonaws.com/wildcard/')
+    axios.get('http://ec2-3-17-164-106.us-east-2.compute.amazonaws.com/wildcard/')
       .then(res => {
         this.wildcards = res.data
       })
@@ -86,4 +89,15 @@ export default {
 </script>
 
 <style>
+.input{
+ border: 1px solid rgb(219, 219, 219);
+ margin-top: 2%;
+ height:38px;
+ width: 250px;
+ border-radius: 10px;
+ padding: 10px;
+}
+.input:hover .input:focus{
+  outline: none;
+}
 </style>

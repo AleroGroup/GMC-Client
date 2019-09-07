@@ -22,7 +22,6 @@ const _415d1a11 = () => interopDefault(import('../pages/user/dashboard/contact.v
 const _62cd9984 = () => interopDefault(import('../pages/user/dashboard/home.vue' /* webpackChunkName: "pages/user/dashboard/home" */))
 const _22eb2f4e = () => interopDefault(import('../pages/user/dashboard/forms/company.vue' /* webpackChunkName: "pages/user/dashboard/forms/company" */))
 const _f30f084e = () => interopDefault(import('../pages/user/dashboard/forms/wildcard.vue' /* webpackChunkName: "pages/user/dashboard/forms/wildcard" */))
-const _b4cd9490 = () => interopDefault(import('../pages/user/dashboard/forms/_companyId.vue' /* webpackChunkName: "pages/user/dashboard/forms/_companyId" */))
 const _63c5ec5c = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 Vue.use(Router)
@@ -110,10 +109,6 @@ export const routerOptions = {
       path: "/user/dashboard/forms/wildcard",
       component: _f30f084e,
       name: "user-dashboard-forms-wildcard"
-    }, {
-      path: "/user/dashboard/forms/:companyId?",
-      component: _b4cd9490,
-      name: "user-dashboard-forms-companyId"
     }, {
       path: "/",
       component: _63c5ec5c,
