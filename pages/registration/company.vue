@@ -365,8 +365,10 @@ methods: {
 
       axios.post('http://ec2-3-17-164-106.us-east-2.compute.amazonaws.com/company/postcompany',formData).then(res =>{
         this.$router.push('/welcome')
+        console.log('uploaded')
       }).catch(err => {
             this.errors.push(error);
+            console.log('error')
       })
 
       },
