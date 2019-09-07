@@ -21,8 +21,8 @@
                style="margin-top:2%; margin-right:2%;"
 
              >
-               <v-img :src="company.cloudImage" height="200px">
-               </v-img>
+              <!--  <v-img :src="company.cloudImage" height="200px">
+               </v-img> -->
                <v-card-title primary-title>
                   <div class="headline mb-3 green--text text--darken-4">
                     {{ company.surname }} , {{ company.names }}
@@ -95,7 +95,7 @@ export default {
      .catch(err => {
        this.errors.push(err);
      })
-   } 
+   }
 
 }
 </script>
