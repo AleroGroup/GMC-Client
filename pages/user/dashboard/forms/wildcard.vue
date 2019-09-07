@@ -9,11 +9,7 @@
     </v-responsive>
     <v-divider></v-divider>
     <v-layout row justify-end>
-      <form @submit.prevent="submit">
-     <v-flex md10>
-      <input placeholder="Search.." name="" class="input"/>
-     </v-flex>
-      </form>
+
       <v-btn color="green" @click="csvExport(csvData)">Export all to CSV</v-btn>
     </v-layout>
 
