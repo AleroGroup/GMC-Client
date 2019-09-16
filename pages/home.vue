@@ -152,7 +152,7 @@
          <!-------------------------->
           <v-flex xs11 md8 hidden-sm-and-down>
             <v-card-media
-            src="https://images.ctfassets.net/pinw8ucllktt/6JHwk2ypecZrTwPbnhdYYd/123edbff5d6556871f3b90a62ea7cfb1/img.png"
+            :src="image"
             style="margin-left:6%;margin-bottom:7%;">
             </v-card-media>
           </v-flex>
@@ -210,6 +210,8 @@ export default {
         mainurl: 'https://ik.imagekit.io/qpt2onjfe/gmc/gmc_site/main/images/37954915406_b4b672f478_h_uRQHlkktZ.png',
 
         greenwave: 'https://images.ctfassets.net/pinw8ucllktt/28RVgHDvBY0EzVin4FyINn/8783dfc9b36abe3e66a84b4e800ee4f2/swash.svg',
+        
+        image:'https://images.ctfassets.net/pinw8ucllktt/6JHwk2ypecZrTwPbnhdYYd/123edbff5d6556871f3b90a62ea7cfb1/img.png',
 
         items: [
           {
