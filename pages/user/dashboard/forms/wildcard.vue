@@ -9,7 +9,6 @@
     </v-responsive>
     <v-divider></v-divider>
     <v-layout row justify-end>
-
       <v-btn color="green" @click="csvExport(csvData)">Export all to CSV</v-btn>
     </v-layout>
 
@@ -74,7 +73,7 @@ export default {
     }
   },
   created() {
-    axios.get('http://ec2-3-17-164-106.us-east-2.compute.amazonaws.com/wildcard/')
+    axios.get('https://www.purplemovi.gq/wildcard/')
       .then(res => {
         this.wildcards = res.data
       })

@@ -144,7 +144,8 @@
          <!-------------------------->
           <v-flex xs11 md8 >
             <v-card-text style="margin-left:6%;">
-               <div class="headline font-weight-medium" style="color:#202565;"> Great Minds Challenge is a two months program, with an exclusive 3 days of impactful challenge. The challenge is focused on growing a New Generation of Leaders with New Mindset.</div>
+               <div class="headline font-weight-medium" style="color:#202565;"> Great Minds Challenge provokes change and raises intentional doers. We do this through
+training, coaching and inspiring people in our In-house or annual challenge led programs.</div>
               <nuxt-link to="/register" style="text-decoration:none;"><v-btn outline large color="#202565" class="" style="margin-top:4%;">Get Started</v-btn></nuxt-link>
             </v-card-text>
           </v-flex>
@@ -210,7 +211,7 @@ export default {
         mainurl: 'https://ik.imagekit.io/qpt2onjfe/gmc/gmc_site/main/images/37954915406_b4b672f478_h_uRQHlkktZ.png',
 
         greenwave: 'https://images.ctfassets.net/pinw8ucllktt/28RVgHDvBY0EzVin4FyINn/8783dfc9b36abe3e66a84b4e800ee4f2/swash.svg',
-        
+
         items: [
           {
             src: 'https://ik.imagekit.io/qpt2onjfe/gmc/gmc_site/main/t2/Group_178_rDslrDayd.svg'

@@ -7,7 +7,6 @@
         </v-flex>
       </v-layout>
     </v-responsive>
-
     <v-divider></v-divider>
  <v-layout row justify-end>
     <v-btn color="green" @click="csvExport(csvData)"> Export all to CSV </v-btn>
@@ -87,8 +86,8 @@ export default {
     }
   },
 
-  mounted() {
-     axios.get('http://ec2-3-17-164-106.us-east-2.compute.amazonaws.com/company/')
+ mounted() {
+     axios.get('https://www.purplemovi.gq/company/')
      .then(res => {
        this.companies = res.data
      })
