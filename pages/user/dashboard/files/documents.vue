@@ -7,7 +7,7 @@
         </v-flex>
       </v-layout>
     </v-responsive>
-
+    <v-divider></v-divider>
     <v-layout row wrap>
        <v-hover v-slot:default="{ hover }" v-for="file in files" :key="file._id">
              <v-card
