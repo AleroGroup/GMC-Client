@@ -6,7 +6,7 @@
       fixed
       v-model="drawer"
       app
-     
+
     >
       <v-list dense>
         <v-list-tile v-on:click="component = 'HomeMain'">
@@ -44,23 +44,42 @@
           </v-list-tile>
         </v-list-group>
 
-        <v-list-tile v-on:click="component ='contactForm'">
+        <v-list-group  no-action sub-group  value="true">
+          <template v-slot:activator>
+            <v-list-tile>
+                <v-list-tile-action>
+                  <v-icon>folder</v-icon>
+                </v-list-tile-action>
+              <v-list-tile-title>Files</v-list-tile-title>
+            </v-list-tile>
+          </template>
+
+          <v-list-tile v-on:click="component = 'allDocs'">
+            <v-list-tile-title>Documents</v-list-tile-title>
+            <v-list-tile-action>
+              <v-icon>file</v-icon>
+            </v-list-tile-action>
+          </v-list-tile>
+
+        </v-list-group>
+
+        <!-- <v-list-tile v-on:click="component ='contactForm'">
            <v-list-tile-action>
               <v-icon>email</v-icon>
            </v-list-tile-action>
            <v-list-tile-content>
              <v-list-tile-title>Contact Admin</v-list-tile-title>
            </v-list-tile-content>
-        </v-list-tile>
+        </v-list-tile> -->
 
-        <v-list-tile v-on:click="component ='google'">
+       <!--  <v-list-tile v-on:click="component ='google'">
            <v-list-tile-action>
               <v-icon>settings</v-icon>
            </v-list-tile-action>
            <v-list-tile-content>
              <v-list-tile-title>Google Mail</v-list-tile-title>
            </v-list-tile-content>
-        </v-list-tile>
+        </v-list-tile> -->
 
       </v-list>
     </v-navigation-drawer>
@@ -82,6 +101,7 @@
 import DashHeader from '../../components/user_dash/header'
 import companyForms from '../user/dashboard/forms/company'
 import wildcardForms from '../user/dashboard/forms/wildcard'
+import allDocs from '../user/dashboard/files/documents'
 import HomeMain from '../user/dashboard/home'
 import contactForm from '../user/dashboard/contact'
 
@@ -91,7 +111,7 @@ export default {
     'wildcardForms': wildcardForms,
     'HomeMain': HomeMain,
     'contactForm': contactForm,
-
+    'allDocs': allDocs
 
   },
   head () {

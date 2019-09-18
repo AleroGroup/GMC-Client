@@ -116,7 +116,8 @@ module.exports = {
     '@nuxtjs/proxy',
     '@nuxtjs/dotenv',
     '@nuxtjs/sitemap',
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/google-analytics',
+    '@nuxt/http'
   ],
   /*
    ** Axios module configuration
@@ -130,6 +131,10 @@ module.exports = {
    */
   proxy: {
     //
+  },
+
+  http: {
+    // proxyHeaders: false
   },
 
   googleAnalytics: {

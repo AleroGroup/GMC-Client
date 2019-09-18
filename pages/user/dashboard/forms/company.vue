@@ -13,15 +13,20 @@
  </v-layout>
 
     <v-layout row wrap>
-       <v-hover v-slot:default="{ hover }" v-for="company in companies" :key="company.companyId">
+       <v-hover v-slot:default="{ hover }" v-for="company in companies" :key="company._id">
              <v-card
                width="300px"
                :elevation="hover ? 12 : 2"
                style="margin-top:2%; margin-right:2%;"
 
              >
-              <!--  <v-img :src="company.cloudImage" height="200px">
-               </v-img> -->
+              <v-card-media
+                contain
+                height="150"
+                width="auto"
+              :src="company.cloudImage"
+              >
+              </v-card-media>
                <v-card-title primary-title>
                   <div class="headline mb-3 green--text text--darken-4">
                     {{ company.surname }} , {{ company.names }}
@@ -33,6 +38,11 @@
                   </div>
                   <div style="margin-top:5%">{{ company.email }}</div>
                 </v-card-text>
+                <v-divider/>
+                <v-card-text>
+                   <v-btn outline color="red" dark @click.prevent="deleteForm(company._id)">Delete </v-btn>
+                </v-card-text>
+
               </v-card>
            </v-hover>
     </v-layout>
@@ -81,9 +91,14 @@ export default {
       link.setAttribute("download", "company.csv");
       link.click();
     },
-    submit(event) {
-      this.$router.push(`dashboard/forms/comform/${this.search}`);
+
+     deleteForm(id) {
+      let uri = `https://www.purplemovi.gq/company/delete/${id}`
+      axios.delete(uri).then(response => {
+        this.companies.splice(this.companies.indexOf(id), 1)
+      })
     }
+
   },
 
  mounted() {

@@ -13,15 +13,22 @@
     </v-layout>
 
     <v-layout row wrap>
-      <v-hover v-slot:default="{ hover }" v-for="wildcard in wildcards" :key="wildcard.wildcardId">
+      <v-hover v-slot:default="{ hover }" v-for="wildcard in wildcards" :key="wildcard._id">
         <v-card
           width="300px"
           :elevation="hover ? 12 : 2"
           style="margin-top:2%; margin-right:2%;"
         >
-          <!-- <v-img :src="wildcard.cloudImage" he
-          ight="200px"></v-img> -->
+              <v-card-media
+                contain
+                height="150"
+                width="auto"
+              :src="wildcard.cloudImage"
+              >
+              </v-card-media>
+
           <v-card-title primary-title>
+
             <div
               class="headline mb-3 green--text text--darken-4"
             >{{ wildcard.surname }} , {{ wildcard.names }}</div>
@@ -30,6 +37,11 @@
             <div class="subtitle text-uppercase">{{ wildcard.noc }}</div>
             <div style="margin-top:5%">{{ wildcard.email }}</div>
           </v-card-text>
+           <v-divider/>
+          <v-card-text>
+            <v-btn outline small color="red" dark @click.prevent="deleteForm(wildcard._id)">Delete </v-btn>
+          </v-card-text>
+
         </v-card>
       </v-hover>
     </v-layout>
@@ -43,7 +55,7 @@ export default {
   name: 'dash_company',
   data() {
     return {
-      wildcards: [],
+      wildcards: {},
       errors: ''
     }
   },
@@ -70,8 +82,16 @@ export default {
       link.setAttribute('href', data)
       link.setAttribute('download', 'company.csv')
       link.click()
+    },
+
+    deleteForm(id) {
+      let uri = `https://www.purplemovi.gq/wildcard/delete/${id}`
+      axios.delete(uri).then(response => {
+        this.wildcards.splice(this.wildcards.indexOf(id),1)
+      })
     }
   },
+
   created() {
     axios.get('https://www.purplemovi.gq/wildcard/')
       .then(res => {

@@ -363,7 +363,7 @@ methods: {
       formData.append("list", this.form.list)
       formData.append("desc", this.form.desc)
 
-      axios.post('https://www.purplemovi.gq/company/postcompany',formData).then(res =>{
+      axios.post('https://www.purplemovi.gq/company/postcompany/',formData).then(res =>{
         this.$router.push('/welcome')
         console.log('uploaded')
       }).catch(err => {
