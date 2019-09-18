@@ -7,11 +7,10 @@
         </v-flex>
       </v-layout>
     </v-responsive>
-    <v-divider></v-divider>
+    <v-divider/>
     <v-layout row justify-end>
       <v-btn color="green" @click="csvExport(csvData)">Export all to CSV</v-btn>
     </v-layout>
-
     <v-layout row wrap>
       <v-hover v-slot:default="{ hover }" v-for="wildcard in wildcards" :key="wildcard._id">
         <v-card
@@ -26,7 +25,6 @@
               :src="wildcard.cloudImage"
               >
               </v-card-media>
-
           <v-card-title primary-title>
 
             <div

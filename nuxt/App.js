@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import { getMatchedComponentsInstances, promisify, globalHandleError } from './utils'
 import NuxtLoading from '~/components/loading.vue'
-import NuxtBuildIndicator from './components/nuxt-build-indicator'
 
 import '../assets/style/app.styl'
 
@@ -10,7 +9,7 @@ import _6f6c098b from '../layouts/default.vue'
 const layouts = { "_default": _6f6c098b }
 
 export default {
-  head: {"title":"Great Minds Nairobi","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1, shrink-to-fit=no"},{"http-equiv":"x-ua-compatible","content":"ie=edge"},{"hid":"description","name":"description"},{"hid":"robots","name":"robots","content":"index,follow"},{"property":"og:type","content":"website"},{"property":"og:site_name"},{"hid":"og:title","property":"og:title"},{"hid":"og:image","property":"og:image","content":"http:\u002F\u002Flocalhost:3000\u002Fundefined"},{"hid":"og:description","property":"og:description"},{"hid":"google-site-verification","name":"google-site-verification","content":"rD0ww0onzejSz3QS0Jrl-als30HUz9pYDcuVi2dXzNo"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Roboto:300,400,500,700|Material+Icons"},{"rel":"stylesheet","href":"https:\u002F\u002Fuse.fontawesome.com\u002Freleases\u002Fv5.0.13\u002Fcss\u002Fall.css"}],"style":[],"script":[]},
+  head: {"title":"Great Minds Nairobi","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1, shrink-to-fit=no"},{"http-equiv":"x-ua-compatible","content":"ie=edge"},{"hid":"description","name":"description"},{"hid":"robots","name":"robots","content":"index,follow"},{"property":"og:type","content":"website"},{"property":"og:site_name"},{"hid":"og:title","property":"og:title"},{"hid":"og:image","property":"og:image","content":"undefined\u002Fundefined"},{"hid":"og:description","property":"og:description"},{"hid":"google-site-verification","name":"google-site-verification","content":"rD0ww0onzejSz3QS0Jrl-als30HUz9pYDcuVi2dXzNo"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Roboto:300,400,500,700|Material+Icons"},{"rel":"stylesheet","href":"https:\u002F\u002Fuse.fontawesome.com\u002Freleases\u002Fv5.0.13\u002Fcss\u002Fall.css"}],"style":[],"script":[]},
 
   render(h, props) {
     const loadingEl = h('NuxtLoading', { ref: 'loading' })
@@ -41,7 +40,7 @@ export default {
       domProps: {
         id: '__nuxt'
       }
-    }, [loadingEl, h(NuxtBuildIndicator), transitionEl])
+    }, [loadingEl, transitionEl])
   },
   data: () => ({
     isOnline: true,
@@ -136,8 +135,6 @@ export default {
     },
 
     setLayout(layout) {
-      if(layout && typeof layout !== 'string') throw new Error('[nuxt] Avoid using non-string value as layout property.')
-
       if (!layout || !layouts['_' + layout]) {
         layout = 'default'
       }
